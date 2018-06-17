@@ -136,3 +136,33 @@ function setClock(id, endtime) {
 	};
 	moreMass();
 
+	//ES6
+class Options {
+	constructor(height, width, bg, fontSize, textAlign,paddingTop) {
+		this.height = height;
+		this.width = width;
+		this.bg = bg;
+		this.fontSize = fontSize;
+		this.textAlign = textAlign;
+		this.paddingTop = paddingTop;
+		
+	}
+	createNewDiv(text) {
+		let div = document.createElement('div');
+		div.textContent = text;
+
+		div.style.cssText = `height: ${this.height};
+							 width: ${this.width};
+							 background-color: ${this.bg};
+							 font-size: ${this.fontSize};
+							 text-align: ${this.textAlign};
+							 padding-top: ${this.paddingTop}`
+							 
+							
+		document.body.appendChild(div)				
+	}
+}
+
+let obj = new Options("200px", "300px", "lightgreen", "10px", "center", "150px");
+obj.createNewDiv("Курс JavaScript2.0 HARD");
+
