@@ -1,0 +1,25 @@
+body{
+	background: url(../32172-large_default.jpg)no-repeat;
+	background-size:cover;
+}
+
+
+#box{
+	width: 150px;
+	height: 150px;
+	position: relative;
+	cursor: pointer;
+	transform: rotate(45deg);
+
+
+}
+#btn{
+	display: block;
+	position:relative;
+	top:100px;
+}
+
+img{
+	width: 200px;
+	height: 200px;
+}
