@@ -722,7 +722,8 @@ header ul li:before {
   width: 300px;
   height: 200px;
   text-align: center;
-  background:lightgreen;
+  background-image:url(../wait.jpg);
+  background-size: cover;
   position: relative;
   bottom:60%;
   left:29%;
@@ -730,5 +731,6 @@ header ul li:before {
   border-radius: 7px;
   box-shadow: 2px 3px 7px black;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color:black;
 
 }
