@@ -20,7 +20,16 @@ $(document).ready(function(){
 			opacity:'toggle'
 		});
 		// Вторая анимация для кнопки Выбрать тур
-		$('.modal').delay(100).hide(300).delay(100).show(500)
+		//$('.modal').delay(100).hide(300).delay(100).show(500)
+		$('.modal').animate(
+		{
+			
+			opacity:'toggle',
+			width:'400px',
+			
+			
+
+		},2500);
 	});
 
 	$('span:first').on('click', function(){
