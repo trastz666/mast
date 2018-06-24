@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Block background example</title>
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Easy as hell -->
+<div id="block" style="width: 100%; height: 100vh;" data-vide-bg="MP4/Veggie-Stand.mp4" data-vide-options="position: 0% 50%">
+		<div class="open">
+		<button class="open-btn" id="open-btn">Открыть магазин</button>
+	</div>
+	<div class="main">
+		<div class="main-info">
+			<div class="name">Название магазина: </div>
+			<div class="name-value"></div>
+
+			<div class="budget">Бюджет магазина: </div>
+			<div class="budget-value"></div>
+
+			<div class="goods">Категории товаров: </div>
+			<div class="goods-value"></div>
+
+			<div class="items">Наименования товаров: </div>
+			<div class="items-value"></div>
+
+			<div class="employers">Сотрудники: </div>
+			<div class="employers-value"></div>
+
+			<div class="discount">Дисконтная система </div>
+			<div class="discount-value"></div>
+
+			<div class="isopen">Открыто </div>
+			<div class="isopen-value"></div>
+		</div>
+		<div class="main-functions">
+			<div class="choose-goods">Введите категории товаров</div>
+			<input class="goods-item" type="text" id="goods_1">
+			<input class="goods-item" type="text" id="goods_2">
+			<input class="goods-item" type="text" id="goods_3">
+			<input class="goods-item" type="text" id="goods_4">
+			<button class="goods-item-btn">Утвердить</button>
+
+			<div class="choose-items">Введите продукты через запятую</div>
+			<input class="choose-item" type="text" id="items">
+
+			<div class="time">Сколько сейчас времени?</div>
+			<input class="time-value" type="text" id="time">
+
+			<div class="count-budget">Расчет дневного бюджета</div>
+			<input class="count-budget-value" type="text" id="budget">
+			<button class="count-budget-btn">Рассчитать</button>
+
+			<div class="hire-employers">Имена сотрудников</div>
+			<input class="hire-employers-item" type="text" id="employers_1" size="20" onBlur='this.value=this.value.replace(/ [^0-9a-яёъ]/ig,"");' onkeyup='this.value=this.value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");'>
+			<input class="hire-employers-item" type="text" id="employers_2" size="20" onBlur='this.value=this.value.replace(/ [^0-9a-яёъ]/ig,"");' onkeyup='this.value=this.value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");'>
+			<input class="hire-employers-item" type="text" id="employers_3" size="20" onBlur='this.value=this.value.replace(/ [^0-9a-яёъ]/ig,"");' onkeyup='this.value=this.value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");'>
+			<button class="hire-employers-btn">Нанять</button>
+			<button class="discount-card"> Оформить скидочную карту </button>
+		</div>
+	</div>
+</div>
+
+<br><br>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../libs/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="js/jquery.vide.min.js"></script>
+<script>
+//  $(document).ready(function () {
+//    $('#block').vide('video/ocean'); // Non declarative initialization
+//
+//    var instance = $('#block').data('vide'); // Get the instance
+//    var video = instance.getVideoObject(); // Get the video object
+//    instance.destroy(); // Destroy instance
+//
+//    $('#block2').vide({
+//      'mp4': 'video/ocean',
+//      'webm': 'video/ocean',
+//      'ogv': 'video/ocean',
+//      'poster': 'video/ocean',
+//    });
+//  });
+</script>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script  src="js/script.js">	</script>
+  </body>
+</html>
+</body>
+</html>
