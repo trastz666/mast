@@ -43,7 +43,7 @@ function showTabContent(b) {
 
 
 //timer задание 8 (Задание 10)
-let deadline = '2018-06-22';
+let deadline = '2018-06-30';
 
 function addZero(num) {
 	if (num >=0 && num < 10) {
