@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="tabs">
+	<div class="tab-link current" data-tab="tab-1">Tab One</div>
+	<div class="tab-link" data-tab="tab-2">Tab Two</div>
+	
+</div>
+
+<div id="tab-1" class="tab-content current">
+	<h1>Урок 17 Слайдер </h1>
+<div id="slider">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+  <ul>
+    <li><img src="images/g_mac127.jpg" alt=""></li>
+    <li style="background: #aaa;"><img src="images/milky-way-2695569_960_720.jpg" alt=""></li>
+    <li><img src="images/780754991.jpg" alt=""></li>
+    <li style="background: #aaa;"><img src="images/yosemite-5.jpg" alt=""></li>
+  </ul>  
+</div>
+
+<div class="slider_option">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox">Autoplay Slider</label>
+</div> 
+
+</div>
+<div id="tab-2" class="tab-content">
+	<div class="wrapper">
+  <div class="colormenu">
+   
+  </div>
+  <div class="calheader">
+      <h2>Калькулятор</h2>
+    </div>
+  <div class="calculatorbox">
+    <div class="calwindow">
+      <!-- ENTRY BOX -->
+      <div class="entry">
+        <p id="answer">0</p>
+      </div>
+      <div class="entryhistory">
+        <p id="history"></p>
+      </div>
+    </div>
+    <!-- BUTTONS -->
+    <div class="calbuttons">
+      <div class="row">
+        <button class="key topcolor" value="clear">C</button>
+        <button class="key topcolor" value="plusminus"><sup>+</sup>/<sub>−</sub></button>
+        <button class="key topcolor" value="%">%</button>
+        <button class="key orange" value="/">÷</button>
+      </div>
+      <div class="row">
+        <button class="key" value="7">7</button>
+        <button class="key" value="8">8</button>
+        <button class="key" value="9">9</button>
+        <button class="key orange" value="*">×</button>
+      </div>
+      <div class="row">
+        <button class="key" value="4">4</button>
+        <button class="key" value="5">5</button>
+        <button class="key" value="6">6</button>
+        <button class="key orange" value="-">−</button>
+      </div>
+      <div class="row">
+        <button class="key" value="1">1</button>
+        <button class="key" value="2">2</button>
+        <button class="key" value="3">3</button>
+        <button class="key orange" value="+">+</button>
+      </div>
+      <div class="row">
+        <button class="key btnspan" value="0">0</button>
+        <button class="key" value=".">.</button>
+        <button class="key orange" value="=">=</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
