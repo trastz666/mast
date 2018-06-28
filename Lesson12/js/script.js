@@ -103,11 +103,15 @@ function setClock(id, endtime) {
 		this.classList.add('more-splash');
 		overlay.style.display = 'block';
 		document.body.style.overflow = 'hidden';
+		
+		
 	}); 
 	close.addEventListener('click', function(){
 		overlay.style.display = 'none';
 		more.classList.remove('more-splash');
 		document.body.style.overflow = '';
+		statusMessage.classList.remove('status');
+		
 	});
 
 	let moreTabs = document.getElementsByClassName('description-btn');
@@ -186,6 +190,7 @@ let form = document.getElementsByClassName('main-form')[0],
 			} else if (request.readyState === 4) {
 				if(request.status == 200 && request.status < 300) {
 					statusMessage.innerHTML = message.successe;
+					
 					// Добавляем контент на странице
 				}
 				else {
@@ -293,7 +298,7 @@ let form = document.getElementsByClassName('main-form')[0],
 		let persons = document.getElementsByClassName('counter-block-input')[0],
 		    restDay = document.getElementsByClassName('counter-block-input')[1],
 		    place = document.getElementById('select'),
-		    totalValue = document.getElementById('total'),
+			totalValue = document.getElementById('total'),
 		    personsSum = 0,
 		    daysSum = 0,
 		    total = 0;
@@ -301,9 +306,10 @@ let form = document.getElementsByClassName('main-form')[0],
 		    totalValue.innerHTML = 0;
 
 		    persons.addEventListener('change', function(){
+				let zero = 0;
 		    	personsSum = +this.value
-		    	total = (daysSum + personsSum) * 4000;
-		    	if (restDay.value == ''){
+		    	total = (daysSum + personsSum) * 4000 *place.options[place.selectedIndex].value;
+		    	if (restDay.value == '' && restDay.value == zero){
 		    		totalValue.innerHTML = 0;
 		    	} else {
 		    		setValue(totalValue,total, 111,1 );
@@ -314,9 +320,10 @@ let form = document.getElementsByClassName('main-form')[0],
 		    	
 		    });
 		     restDay.addEventListener('change', function(){
+				let zero = 0;
 		    	daysSum = +this.value
-		    	total = (daysSum + personsSum) * 4000;
-		    	if (persons.value == ''){
+		    	total = (daysSum + personsSum) * 4000*place.options[place.selectedIndex].value;
+		    	if (persons.value == '' && persons.value == zero ){
 		    		totalValue.innerHTML = 0;
 		    	} else {
 		    		setValue(totalValue,total, 111,1 );
@@ -328,27 +335,27 @@ let form = document.getElementsByClassName('main-form')[0],
 		    });
 
 		    place.addEventListener('change', function() {
-		    	if (restDay.value == '' || persons.value == '') {
-		    		totalValue.innerHTML = 0;
+				let zero = 0;
+		    	if (restDay.value == '' && persons.value == '' && restDay.value == zero && persons.value == zero ) {
+					totalValue.innerHTML = 0;
 		    	} else {
 		    		let a = total;
-		    		let b = a  * this.options[this.selectedIndex].value;
+					let b = a*this.options[this.selectedIndex].value;
+		    		
 		    		setValue(totalValue,b, 111,1);
 		    		
-		    		
-
 		    	}
 
 		    	
 		    });
 		   	persons.onkeypress = function(e) {
-		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',') {
+		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',' || e.key === '0') {
 		   			return false;
 		   		}
 		   	};
 
 		   	restDay.onkeypress = function(e) {
-		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ','){
+		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',' || e.key === '0'){
 		   			return false;
 		   		}
 		   	}
