@@ -305,13 +305,17 @@ let form = document.getElementsByClassName('main-form')[0],
 
 		    totalValue.innerHTML = 0;
 
-		    persons.addEventListener('change', function(){
-				let zero = 0;
+		    persons.addEventListener('keyup', function(){
+				let zero = 0,
+					y = '';
 		    	personsSum = +this.value
 		    	total = (daysSum + personsSum) * 4000 *place.options[place.selectedIndex].value;
-		    	if (restDay.value == '' && restDay.value == zero){
-		    		totalValue.innerHTML = 0;
+		    	if (restDay.value == '' || restDay.value <= zero || persons.value == y ){
+					
+					totalValue.innerHTML = 0;
+					
 		    	} else {
+					
 		    		setValue(totalValue,total, 111,1 );
 		    		//totalValue.innerHTML = total;
 		    		
@@ -319,13 +323,18 @@ let form = document.getElementsByClassName('main-form')[0],
 		    	}
 		    	
 		    });
-		     restDay.addEventListener('change', function(){
-				let zero = 0;
+		     restDay.addEventListener('keyup', function(){
+				let zero = 0,
+					y = '';
+				
 		    	daysSum = +this.value
 		    	total = (daysSum + personsSum) * 4000*place.options[place.selectedIndex].value;
-		    	if (persons.value == '' && persons.value == zero ){
-		    		totalValue.innerHTML = 0;
+		    	if (persons.value == '' || persons.value <= zero || restDay.value == y ){
+					
+					totalValue.innerHTML = 0;
+					
 		    	} else {
+					
 		    		setValue(totalValue,total, 111,1 );
 		    		//totalValue.innerHTML = total;
 		    		
