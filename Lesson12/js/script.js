@@ -37,7 +37,7 @@ function showTabContent(b) {
 	});
 });
 //timer задание 8 (Задание 10)
-let deadline = '2018-06-22';
+let deadline = '2018-06-31';
 
 function addZero(num) {
 	if (num >=0 && num < 10) {
@@ -307,15 +307,17 @@ let form = document.getElementsByClassName('main-form')[0],
 
 		    persons.addEventListener('keyup', function(){
 				let zero = 0,
-					y = '';
+					y = '',
+					s =4000*place.options[place.selectedIndex].value;
 		    	personsSum = +this.value
-		    	total = (daysSum + personsSum) * 4000 *place.options[place.selectedIndex].value;
-		    	if (restDay.value == '' || restDay.value <= zero || persons.value == y || persons.value == zero ){
+		    	total = (daysSum + personsSum)*s;
+		    	if (restDay.value == '' || restDay.value <= zero || persons.value == y || persons.value == zero){
+					total = 0;
 					
 					totalValue.innerHTML = 0;
 					
-		    	} else {
 					
+		    	} else {
 		    		setValue(totalValue,total, 111,1 );
 		    		//totalValue.innerHTML = total;
 		    		
@@ -325,16 +327,18 @@ let form = document.getElementsByClassName('main-form')[0],
 		    });
 		     restDay.addEventListener('keyup', function(){
 				let zero = 0,
-					y = '';
+					y = '',
+					s =4000*place.options[place.selectedIndex].value;
 				
 		    	daysSum = +this.value
-		    	total = (daysSum + personsSum) * 4000*place.options[place.selectedIndex].value;
+		    	total = (daysSum + personsSum) *s;
 		    	if (persons.value == '' || persons.value <= zero || restDay.value == y || restDay.value == zero){
-					
+					total=0;
 					totalValue.innerHTML = 0;
 					
-		    	} else {
 					
+				
+		    	} else {
 		    		setValue(totalValue,total, 111,1 );
 		    		//totalValue.innerHTML = total;
 		    		
@@ -344,10 +348,16 @@ let form = document.getElementsByClassName('main-form')[0],
 		    });
 
 		    place.addEventListener('change', function() {
-				let zero = 0;
-		    	if (restDay.value == '' && persons.value == '' && restDay.value == zero && persons.value == zero ) {
+
+				let zero = 0,
+					y = '';
+					
+		    	if (restDay.value == '' && persons.value == '' && restDay.value == zero && persons.value == zero && persons.value == y && restDay.value == y  ) {
 					totalValue.innerHTML = 0;
+					total = 0;
+					
 		    	} else {
+					
 		    		let a = total;
 					let b = a*this.options[this.selectedIndex].value;
 		    		
