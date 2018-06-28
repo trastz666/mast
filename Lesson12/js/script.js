@@ -358,13 +358,13 @@ let form = document.getElementsByClassName('main-form')[0],
 		    	
 		    });
 		   	persons.onkeypress = function(e) {
-		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',' || e.key === '0') {
+		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',') {
 		   			return false;
 		   		}
 		   	};
 
 		   	restDay.onkeypress = function(e) {
-		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ',' || e.key === '0'){
+		   		if (e.key === '.' || e.key === '+' || e.key === 'e' || e.key === ','  ){
 		   			return false;
 		   		}
 		   	}
