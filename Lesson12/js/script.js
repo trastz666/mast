@@ -310,7 +310,7 @@ let form = document.getElementsByClassName('main-form')[0],
 					y = '';
 		    	personsSum = +this.value
 		    	total = (daysSum + personsSum) * 4000 *place.options[place.selectedIndex].value;
-		    	if (restDay.value == '' || restDay.value <= zero || persons.value == y ){
+		    	if (restDay.value == '' || restDay.value <= zero || persons.value == y || persons.value == zero ){
 					
 					totalValue.innerHTML = 0;
 					
@@ -329,7 +329,7 @@ let form = document.getElementsByClassName('main-form')[0],
 				
 		    	daysSum = +this.value
 		    	total = (daysSum + personsSum) * 4000*place.options[place.selectedIndex].value;
-		    	if (persons.value == '' || persons.value <= zero || restDay.value == y ){
+		    	if (persons.value == '' || persons.value <= zero || restDay.value == y || restDay.value == zero){
 					
 					totalValue.innerHTML = 0;
 					
