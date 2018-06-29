@@ -25,14 +25,45 @@ let form = document.getElementsByClassName('main-form')[0],
 		request.send(formData);
 
 		request.onreadystatechange = function() {
-			if(request.readyDtate < 4) {
-				statusMessage.innerHTML = message.loading;
-			} else if (request.readyState === 4) {
-				if(request.status == 200 && request.status < 300) {
-					statusMessage.innerHTML = message.successe;
+			let promise = new Promise(function(resolve,reject){
+
+					resolve(request.readyDtate < 4)
+					resolve(request.readyState === 4)
+					resolve(request.status == 200 && request.status < 300)
+				
+
+				promise
+
+					.then(loading =>{ 
+						statusMessage.innerHTML = message.loading
+					});
+					.then(successe =>{  statusMessage.innerHTML = message.successe
+					});
+					.catch(error => {
+						statusMessage.innerHTML = message.failure
+					});
+
+						for (let i = 0; i < input.length; i++) {
+							input[i].value = '';
+								// очищаем поля ввода
+					}
+
+						});
+
+
+
+
+
+
+
+					 {
+							  statusMessage.innerHTML = message.loading;
+					} else if (request.readyState === 4) {
+					  if 	  (request.status == 200 && request.status < 300) {
+								statusMessage.innerHTML = message.successe;
 					// Добавляем контент на странице
-				}
-				else {
+					}
+					else {
 					statusMessage.innerHTML = message.failure;
 				}
 			}
@@ -41,7 +72,9 @@ let form = document.getElementsByClassName('main-form')[0],
 				input[i].value = '';
 				// очищаем поля ввода
 			}
-		});
+			})
+		
+		};
 
 	let contactForm = document.getElementById('form'),
 		inputMail = contactForm.getElementsByTagName('input')[0],
